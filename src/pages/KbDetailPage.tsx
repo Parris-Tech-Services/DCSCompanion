@@ -39,7 +39,7 @@ export default function KbDetailPage() {
             <div className="font-semibold text-2xl mb-2">{item.title}</div>
             {item.category && <div className="text-sm text-gray-500 mb-2">{item.category}</div>}
             {item.summary && <div className="text-gray-700 dark:text-gray-300 mb-4">{item.summary}</div>}
-            {item.body && <div className="prose max-w-none dark:prose-invert" dangerouslySetInnerHTML={{ __html: item.body }} />}
+            {item.body && <div className="prose max-w-none whitespace-pre-wrap dark:prose-invert">{item.body}</div>}
             <div className="flex gap-2 mt-4">
               <button className="px-3 py-1 border rounded" onClick={() => setEditing(true)}>Edit</button>
               <button className="px-3 py-1 border rounded text-red-600" onClick={handleDelete}>Delete</button>
