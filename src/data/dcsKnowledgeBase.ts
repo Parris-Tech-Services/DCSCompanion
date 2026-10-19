@@ -1,6 +1,8 @@
+import { networkingKb } from './networkingKb';
+
 export type DcsKbTopic = {
   id: string;
-  category: 'ICT' | 'Library' | 'Student Welfare' | 'Enrolments' | 'General';
+  category: 'ICT' | 'Library' | 'Student Welfare' | 'Enrolments' | 'General' | 'Networking';
   title: string;
   summary: string;
   links?: { label: string; url: string }[];
@@ -156,6 +158,7 @@ export const dcsKnowledgeBase: DcsKbTopic[] = [
     ],
   },
   // ...existing code...
+  ...networkingKb,
 ];
 
 // Utility: get top N relevant KB entries for a question (improved matching)

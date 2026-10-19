@@ -9,6 +9,7 @@ const categories = [
   'Student Welfare',
   'Enrolments',
   'General',
+  'Networking',
 ];
 
 interface KBItem {
@@ -217,7 +218,7 @@ const DcsKnowledgeBase: React.FC = () => {
                 </button>
                 <span className="inline-block px-2 py-1 text-xs bg-blue-100 text-blue-800 rounded self-start">{item.category}</span>
                 <h2 className="text-lg font-semibold">{item.title}</h2>
-                <p className="text-gray-700">{item.summary}</p>
+                <p className="text-gray-700">{item.summary.split('\n')[0]}</p>
                 <div className="flex gap-2 mt-2">
                   <button
                     onClick={() => setExpandedId(expandedId === item.id ? null : item.id)}
@@ -284,7 +285,7 @@ const DcsKnowledgeBase: React.FC = () => {
                 )}
                 {expandedId === item.id && editingId !== item.id && (
                   <div className="mt-2 p-2 border rounded bg-gray-50">
-                    <div className="mb-2 text-sm text-gray-800">{item.summary}</div>
+                    <div className="mb-2 text-sm text-gray-800 whitespace-pre-line">{item.summary}</div>
                     {item.links && item.links.length > 0 && (
                       <div className="flex flex-wrap gap-2 mt-2">
                         {item.links.map(link => (
