@@ -40,7 +40,7 @@ Set the following env vars in your hosting platform:
 - `VITE_FIREBASE_AUTH_DOMAIN`
 - `VITE_FIREBASE_PROJECT_ID`
 - `VITE_FIREBASE_APP_ID`
-- `VITE_GROQ_API_KEY` (if using Ask DCS LLM feature)
+- Ask DCS AI disabled pending a secure server-side proxy; do not set a browser LLM API key.
 # Deployment Guide - GitHub Pages + Firebase
 
 ## Setup Instructions

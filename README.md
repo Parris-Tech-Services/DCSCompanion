@@ -27,7 +27,7 @@ VITE_FIREBASE_API_KEY=your-api-key
 VITE_FIREBASE_AUTH_DOMAIN=your-auth-domain.firebaseapp.com
 VITE_FIREBASE_PROJECT_ID=your-project-id
 VITE_FIREBASE_APP_ID=your-app-id
-VITE_GROQ_API_KEY=your-groq-key  # Optional: for Ask DCS LLM
+# Ask DCS AI is temporarily disabled until an authenticated server-side proxy is deployed.
 ```
 
 ### 3. Load Data into Firestore
@@ -79,7 +79,7 @@ Open http://localhost:5173 and login with your Firebase account.
 - Change LLM model in `src/services/llmClient.ts` (currently uses Groq llama-3.3-70b-versatile).
 
 ## Security
-- **Repository:** Kept private on GitHub to protect source code.
+- **Repository:** Currently public on GitHub. Do not commit school, staff, student or client secrets/data.
 - **Sample Data:** Placeholder data in `src/data/*.ts` — real staff/KB data lives in Firestore only.
 - **Environment Variables:** Never commit `.env.local` — use `.env.example` as a template and populate locally.
 - **Firestore Rules:** Security rules restrict reads/writes to authenticated users. See [FIREBASE_RULES.md](./FIREBASE_RULES.md).
@@ -115,3 +115,7 @@ src/
 ---
 
 *Built with Vite, React, TypeScript, Tailwind, Firebase, and Groq LLM.*
+
+### Security hold (26 October 2026)
+
+The static GitHub Pages build no longer receives a Groq API key. Ask DCS AI is temporarily unavailable until an authenticated, rate-limited server-side proxy is implemented. A previous successful build accepted a non-empty client-side key setting; the credential owner must revoke/rotate any potentially exposed key and review usage. No secret value is recorded in this repository or this note.
