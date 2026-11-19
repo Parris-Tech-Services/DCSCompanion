@@ -28,8 +28,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v7
 
-      - name: Set non-production Firebase placeholders for Dependabot validation
-        if: github.actor == 'dependabot[bot]'
+      - name: Set non-production Firebase placeholders for pull request builds
+        if: github.event_name == 'pull_request'
         run: |
           {
             echo "VITE_FIREBASE_API_KEY=ci-placeholder"
@@ -39,7 +39,7 @@ jobs:
           } >> "$GITHUB_ENV"
 
       - name: Verify environment variables
-        if: github.actor != 'dependabot[bot]'
+        if: github.event_name != 'pull_request'
         run: |
           echo "Verifying environment variables are set..."
           if [ -z "$VITE_FIREBASE_API_KEY" ] || \
